@@ -1,56 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import Aos from "aos";
+import "aos/dist/aos.css";
+import React, { useEffect } from "react";
+import { Watch } from "react-loader-spinner";
+import { RouterProvider } from "react-router-dom";
+import useApplyTheme from "./hooks/useApplyTheme";
+import useAuth from "./hooks/useAuth";
+import router from "./routers/router";
+import Layout from "./ui/Layout";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+  const auth = useAuth();
+  const theme = useApplyTheme();
+
+  useEffect(() => {
+    Aos.init({ duration: 1000, offset: 0, easing: "ease-in-out", once: true });
+  }, []);
+
+  return auth ? (
+    <RouterProvider router={router}>
+      <Layout />
+    </RouterProvider>
+  ) : (
+    <div
+      className="h-screen w-full flex flex-row items-center justify-center"
+      data-theme={theme}
+    >
+      <Watch
+        height="80"
+        width="80"
+        radius="48"
+        color="#4fa94d"
+        ariaLabel="watch-loading"
+        wrapperStyle={{}}
+        wrapperClassName=""
+        visible={true}
+      />
+      <h1>Checking Authentication...</h1>
     </div>
   );
 }
