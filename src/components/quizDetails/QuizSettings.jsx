@@ -110,13 +110,13 @@ const QuizSettings = () => {
 
   // link shortener
 
-  // useEffect(() => {
-  //   fetch(
-  //     `https://api.shrtco.de/v2/shorten?url=${process.env.REACT_APP_API_URL}test/${quizId}`
-  //   )
-  //     .then((response) => response.json())
-  //     .then((data) => setLink(data.result.full_short_link));
-  // }, [quizId]);
+  useEffect(() => {
+    fetch(
+      `https://api.shrtco.de/v2/shorten?url=${process.env.REACT_APP_API_URL}test/${quizId}`
+    )
+      .then((response) => response.json())
+      .then((data) => setLink(data.result.full_short_link));
+  }, [quizId]);
 
   return (
     <div className="w-[30%] shadow-md shadow-neutral rounded-lg p-5">
@@ -196,11 +196,11 @@ const QuizSettings = () => {
             Quiz should be atleast 1 min!
           </p>
         )}
-        {/* <CopyToClipboard text={link}> */}
-        <button type="submit" className="btn btn-secondary">
-          Publish
-        </button>
-        {/* </CopyToClipboard> */}
+        <CopyToClipboard text={link}>
+          <button type="submit" className="btn btn-secondary">
+            Publish
+          </button>
+        </CopyToClipboard>
       </form>
 
       <ul className="h-[20em] w-full overflow-auto list-inside list-decimal shadow shadow-neutral rounded p-5 my-5">

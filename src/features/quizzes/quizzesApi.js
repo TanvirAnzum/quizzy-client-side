@@ -52,6 +52,7 @@ export const quizzesApi = apiSlice.injectEndpoints({
       }),
       async onQueryStarted(data, { queryFulfilled, dispatch }) {
         // optimistic update
+        // console.log(data);
         const patchResult = dispatch(
           apiSlice.util.updateQueryData("fetchQuiz", data.id, (draft) => {
             if (data?.contents) {
@@ -59,6 +60,12 @@ export const quizzesApi = apiSlice.injectEndpoints({
             }
             if (data?.participants) {
               draft.participants.push(data.participants);
+            }
+            if (!data?.participants && !data?.contents) {
+              return {
+                ...draft,
+                ...data,
+              };
             }
           })
         );
