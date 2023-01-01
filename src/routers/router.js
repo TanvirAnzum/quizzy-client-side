@@ -4,9 +4,9 @@ import Login from "../pages/Login";
 import MyQuizzes from "../pages/MyQuizzes";
 import QuizCreator from "../pages/QuizCreator";
 import QuizDetails from "../pages/QuizDetails";
-import QuizTest from "../pages/QuizTest";
 import Registration from "../pages/Registration";
 import SharedQuizzes from "../pages/SharedQuizzes";
+import StartTest from "../pages/StartTest";
 import Statistics from "../pages/Statistics";
 import DashBoardLayout from "../ui/DashBoardLayout";
 import Layout from "../ui/Layout";
@@ -89,15 +89,15 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      {
-        path: "user/test/:quizId",
-        element: (
-          <PrivateRoute>
-            <QuizTest />
-          </PrivateRoute>
-        ),
-      },
     ],
+  },
+  {
+    path: "/startTest/:quizId",
+    element: (
+      <PrivateRoute>
+        <StartTest />
+      </PrivateRoute>
+    ),
   },
 ]);
 

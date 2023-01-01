@@ -3876,15 +3876,6 @@ html {
   padding: 0px;
 }
 
-.input-md {
-  height: 3rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  line-height: 2;
-}
-
 .input-sm {
   height: 2rem;
   padding-left: 0.75rem;
@@ -4115,12 +4106,12 @@ html {
   z-index: 50;
 }
 
-.z-\[100\] {
-  z-index: 100;
-}
-
 .z-\[98\] {
   z-index: 98;
+}
+
+.z-\[100\] {
+  z-index: 100;
 }
 
 .m-auto {
@@ -4164,6 +4155,10 @@ html {
   margin-top: 1rem;
 }
 
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
 .mt-\[14vh\] {
   margin-top: 14vh;
 }
@@ -4186,10 +4181,6 @@ html {
 
 .mt-3 {
   margin-top: 0.75rem;
-}
-
-.mt-5 {
-  margin-top: 1.25rem;
 }
 
 .block {
@@ -4250,10 +4241,6 @@ html {
   height: 1.5rem;
 }
 
-.h-\[80vh\] {
-  height: 80vh;
-}
-
 .h-\[30em\] {
   height: 30em;
 }
@@ -4280,6 +4267,10 @@ html {
 
 .h-\[16px\] {
   height: 16px;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .min-h-\[10vh\] {
@@ -4420,14 +4411,6 @@ html {
 
 .w-\[16px\] {
   width: 16px;
-}
-
-.w-\[40em\] {
-  width: 40em;
-}
-
-.w-\[50em\] {
-  width: 50em;
 }
 
 .min-w-full {
@@ -4683,6 +4666,10 @@ html {
   background-color: hsl(var(--b1) / var(--tw-bg-opacity));
 }
 
+.bg-\[rgba\(0\2c 0\2c 0\2c 0\.5\)\] {
+  background-color: rgba(0,0,0,0.5);
+}
+
 .bg-green-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(134 239 172 / var(--tw-bg-opacity));
@@ -4706,19 +4693,6 @@ html {
 .bg-slate-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(71 85 105 / var(--tw-bg-opacity));
-}
-
-.bg-gray-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
-}
-
-.bg-\[\(0\2c 0\2c 0\2c 0\.5\)\] {
-  background-color: (0,0,0,0.5);
-}
-
-.bg-\[rgba\(0\2c 0\2c 0\2c 0\.5\)\] {
-  background-color: rgba(0,0,0,0.5);
 }
 
 .bg-base-200 {
@@ -4875,6 +4849,11 @@ html {
   color: rgb(243 244 246 / var(--tw-text-opacity));
 }
 
+.text-warning {
+  --tw-text-opacity: 1;
+  color: hsl(var(--wa) / var(--tw-text-opacity));
+}
+
 .text-indigo-600 {
   --tw-text-opacity: 1;
   color: rgb(79 70 229 / var(--tw-text-opacity));
@@ -4908,11 +4887,6 @@ html {
 .text-primary {
   --tw-text-opacity: 1;
   color: hsl(var(--p) / var(--tw-text-opacity));
-}
-
-.text-warning {
-  --tw-text-opacity: 1;
-  color: hsl(var(--wa) / var(--tw-text-opacity));
 }
 
 .text-red-500 {
