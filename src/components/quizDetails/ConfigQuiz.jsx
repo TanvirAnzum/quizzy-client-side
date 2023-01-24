@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import { useUpdateQuizMutation } from "../../features/quizzes/quizzesApi";
 import ParticipantModal from "./ParticipantModal";
 
@@ -33,6 +34,7 @@ const ConfigQuiz = ({ quiz }) => {
       ...data,
     });
     reset();
+    toast.success("Data updated successfully!");
   };
 
   return (
@@ -55,7 +57,7 @@ const ConfigQuiz = ({ quiz }) => {
               <option value="private">Private</option>
             </select>
             <label className="label">
-              <span className="label-text-alt">default value: public</span>
+              <span className="label-text-alt">default value: Private</span>
             </label>
           </div>
 
@@ -92,7 +94,7 @@ const ConfigQuiz = ({ quiz }) => {
               className="input input-bordered "
               id="negativeMarking"
               placeholder="0 points per wrong question"
-              {...register("negativeMarking", { min: 1, max: 99 })}
+              {...register("negativeMarking", { min: 0, max: 99 })}
             />
             <label className="label">
               <span className="label-text-alt">
@@ -143,7 +145,7 @@ const ConfigQuiz = ({ quiz }) => {
             Status: <span>{status}</span>
           </p>
           <p className="w-full flex items-center justify-between">
-            Public Access: <span>{publicAccess.toString()}</span>
+            Public Access: <span>{publicAccess}</span>
           </p>
           <p className="w-full flex items-center justify-between">
             Duration: <span>{quizDuration}</span>
@@ -154,7 +156,7 @@ const ConfigQuiz = ({ quiz }) => {
           <p className="w-full flex items-center justify-between">
             Negative Markings: <span>{negativeMarking}</span>
           </p>
-          {publicAccess && (
+          {publicAccess === "private" && (
             <button className="btn btn-success" onClick={() => setModal(true)}>
               {" "}
               View all participants

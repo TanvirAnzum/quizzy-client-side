@@ -6,9 +6,8 @@ import { useFetchQuizQuery } from "../features/quizzes/quizzesApi";
 const QuizTest = () => {
   const { quizId } = useParams();
   const { data } = useFetchQuizQuery(quizId);
-  console.log(data);
-  const { title, contents, negativeMarking, numberPerQuestion, quizDuration } =
-    data || {};
+
+  const { title, contents, negativeMarking, numberPerQuestion } = data || {};
 
   const [answeredQuestions, setAnsweredQuestions] = useState({
     right: 0,

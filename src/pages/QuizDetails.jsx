@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import AnalyzeQuiz from "../components/quizDetails/AnalyzeQuiz";
 import ConfigQuiz from "../components/quizDetails/ConfigQuiz";
 import CreateQuiz from "../components/quizDetails/CreateQuiz";
 import PublishQuiz from "../components/quizDetails/PublishQuiz";
@@ -15,7 +14,6 @@ const QuizDetails = () => {
     create: <CreateQuiz quiz={data} />,
     config: <ConfigQuiz quiz={data} />,
     publish: <PublishQuiz quiz={data} />,
-    analyze: <AnalyzeQuiz quiz={data} />,
   };
 
   return (
@@ -56,18 +54,6 @@ const QuizDetails = () => {
             }
           >
             Publish
-          </Link>
-        </li>
-        <li>
-          <Link
-            onClick={() => setOptions("analyze")}
-            className={
-              options === "analyze"
-                ? "active w-[6em] flex items-center justify-center "
-                : " flex items-center justify-center w-[6em]"
-            }
-          >
-            Analyze
           </Link>
         </li>
       </ul>

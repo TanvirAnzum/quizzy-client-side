@@ -13,8 +13,6 @@ const CreateQuiz = ({ quiz }) => {
         <button className="btn btn-secondary" onClick={() => setModal(true)}>
           Add Item
         </button>
-        <button className="btn btn-secondary">Share</button>
-        <button className="btn btn-error">Delete Quiz</button>
       </div>
       {quiz?.contents?.length === 0 && (
         <div className="w-full h-[20em] shadow shadow-neutral rounded flex flex-col items-center justify-center">

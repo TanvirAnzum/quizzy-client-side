@@ -27,6 +27,7 @@ const QuizItemModal = ({ setModal }) => {
         id: quizId,
         contents: quizContentObj,
       });
+      setModal(false);
     } else {
       alert("please enter correct answer");
     }

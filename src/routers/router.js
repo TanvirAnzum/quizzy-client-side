@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import TestQuestion from "../components/quiztest/TestQuestion";
 import FrontPage from "../pages/FrontPage";
 import Login from "../pages/Login";
 import MyQuizzes from "../pages/MyQuizzes";
@@ -8,8 +9,10 @@ import Registration from "../pages/Registration";
 import SharedQuizzes from "../pages/SharedQuizzes";
 import StartTest from "../pages/StartTest";
 import Statistics from "../pages/Statistics";
+import TestResult from "../pages/TestResult";
 import DashBoardLayout from "../ui/DashBoardLayout";
 import Layout from "../ui/Layout";
+import TestLayout from "../ui/TestLayout";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
 
@@ -92,12 +95,39 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/startTest/:quizId",
+    path: "/test",
+    element: <TestLayout />,
+    children: [
+      {
+        path: "/test/private/:quizId",
+        element: (
+          <PrivateRoute>
+            <TestQuestion />
+          </PrivateRoute>
+        ),
+      },
+
+      {
+        path: "/test/public/:quizId",
+        element: <TestQuestion />,
+      },
+    ],
+  },
+  {
+    path: "/test/public/start/:quizId",
+    element: <StartTest />,
+  },
+  {
+    path: "/test/private/start/:quizId",
     element: (
       <PrivateRoute>
         <StartTest />
       </PrivateRoute>
     ),
+  },
+  {
+    path: "test/finished/:testId",
+    element: <TestResult />,
   },
 ]);
 

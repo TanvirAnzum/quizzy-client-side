@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import { useUpdateQuizMutation } from "../../features/quizzes/quizzesApi";
 
 const PublishQuiz = ({ quiz }) => {
-  const { _id, status } = quiz || {};
+  const { _id, status, publicAccess } = quiz || {};
 
   const [update] = useUpdateQuizMutation();
 
@@ -15,12 +15,15 @@ const PublishQuiz = ({ quiz }) => {
       id: _id,
       status: "published",
     });
+    toast.success("Quiz published successfully!");
   };
 
-  const demoUrl = "https://github.com";
+  const demoUrl = "https://quizzy-ee12c.web.app/";
 
   useEffect(() => {
-    fetch(`https://api.shrtco.de/v2/shorten?url=${demoUrl}/test/${_id}`)
+    fetch(
+      `https://api.shrtco.de/v2/shorten?url=${demoUrl}/test/${publicAccess}/start/${_id}`
+    )
       .then((response) => response.json())
       .then((data) => {
         setLink(data.result.full_short_link);

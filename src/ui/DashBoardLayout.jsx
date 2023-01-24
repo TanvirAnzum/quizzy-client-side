@@ -17,18 +17,24 @@ const DashBoardLayout = () => {
         <Navbar />
         <div className="drawer min-h-[100vh] overflow-visible drawer-mobile mt-[10vh]">
           <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-          <div className="drawer-content flex flex-col p-4 gap-2">
+          <div
+            className={
+              pathname === "/user/myQuizzes" || pathname === "/user"
+                ? "drawer-content flex flex-col p-4 justify-between"
+                : "drawer-content flex flex-col p-4 gap-2"
+            }
+          >
             <Outlet />
             <label
               htmlFor="my-drawer-2"
               className="btn btn-primary drawer-button lg:hidden"
             >
-              Open drawer
+              Dashboard
             </label>
           </div>
-          <div className="drawer-side">
+          <div className="drawer-side bg-none">
             <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-            <ul className="menu p-4 w-80 bg-base-300 text-base-content gap-1">
+            <ul className="menu p-4 w-80 bg-base-300 text-base-content gap-1 ">
               <li>
                 <Link
                   to="/user"

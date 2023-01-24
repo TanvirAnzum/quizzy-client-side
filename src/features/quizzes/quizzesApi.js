@@ -4,8 +4,8 @@ export const quizzesApi = apiSlice.injectEndpoints({
   // endpoints
   endpoints: (builder) => ({
     fetchQuizzes: builder.query({
-      query: ({ email, page, limit }) =>
-        `quizzes?email=${email}&page=${page}&limit=${limit}`,
+      query: ({ email, page, limit, status }) =>
+        `quizzes?email=${email}&page=${page}&limit=${limit}&status=${status}`,
     }),
     fetchParticipatedQuizzes: builder.query({
       query: ({ email, page, limit }) =>
@@ -51,8 +51,6 @@ export const quizzesApi = apiSlice.injectEndpoints({
         body: data,
       }),
       async onQueryStarted(data, { queryFulfilled, dispatch }) {
-        // optimistic update
-        // console.log(data);
         const patchResult = dispatch(
           apiSlice.util.updateQueryData("fetchQuiz", data.id, (draft) => {
             if (data?.contents) {
@@ -69,6 +67,7 @@ export const quizzesApi = apiSlice.injectEndpoints({
             }
           })
         );
+
         try {
           await queryFulfilled;
         } catch (error) {
@@ -82,6 +81,19 @@ export const quizzesApi = apiSlice.injectEndpoints({
         url: `quiz/${id}`,
         method: "DELETE",
       }),
+      async onQueryStarted(id, { queryFulfilled, dispatch }) {
+        const patchResult = dispatch(
+          apiSlice.util.updateQueryData("fetchQuiz", id, (draft) => {
+            return draft.filter((item) => item._id !== id);
+          })
+        );
+        try {
+          await queryFulfilled;
+        } catch (error) {
+          console.log(error);
+          patchResult.undo();
+        }
+      },
     }),
   }),
 });

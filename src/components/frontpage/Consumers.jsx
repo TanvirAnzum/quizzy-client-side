@@ -6,15 +6,15 @@ const Consumers = () => {
       data-aos="fade-up"
       className="w-full min-h-[80vh] flex flex-col gap-10 p-10 items-center justify-center"
     >
-      <h1 className="font-bold text-3xl uppercase text-slate-600">
+      <h1 className="font-bold text-xl sm:text-3xl uppercase  text-center">
         Who uses quizzy
       </h1>
       <hr className="w-full border-slate-300" />
       <div className="w-full flex items-center justify-between flex-wrap">
-        <div className="text-slate-600 text-center w-[26em] min-h-[22em]">
+        <div className="text-center w-[26em] min-h-[22em] mb-4">
           <i class="fa-solid fa-person text-5xl mb-2"></i>
-          <h1 className="text-2xl font-bold mb-6">Individuals</h1>
-          <p className="text-md font-medium">
+          <h1 className="text-lg sm:text-2xl font-bold mb-6">Individuals</h1>
+          <p className="text-sm text-center sm:text-md font-medium font-serif">
             Create fun social quizzes that you can post on your website, blog or
             other social media site. If you prefer privacy the advanced email
             options allow you to quickly send private quizzes to your friends.
@@ -22,10 +22,10 @@ const Consumers = () => {
             they have completed the quiz.
           </p>
         </div>
-        <div className="text-slate-600 text-center w-[26em] min-h-[22em]">
+        <div className=" text-center w-[26em] min-h-[22em] mb-4">
           <i class="fa-solid fa-graduation-cap text-5xl mb-2"></i>
-          <h1 className="text-2xl font-bold mb-6">Teachers</h1>
-          <p className="text-md font-medium">
+          <h1 className="text-lg sm:text-2xl font-bold mb-6">Teachers</h1>
+          <p className="text-sm text-center sm:text-md font-medium font-serif">
             Quickly create courses or online tests for your students. You can
             make your test public or just publish it for your class or school
             with our private test options. The premium account will allow you to
@@ -33,10 +33,10 @@ const Consumers = () => {
             will save you time and allow you to concentrate on what's important.
           </p>
         </div>
-        <div className="text-slate-600 text-center w-[26em] min-h-[22em]">
+        <div className="text-center w-[26em] min-h-[22em] mb-4">
           <i class="fa-solid fa-business-time text-5xl mb-2"></i>
-          <h1 className="text-2xl font-bold mb-6">Business</h1>
-          <p className="text-md font-medium">
+          <h1 className="text-lg sm:text-2xl font-bold mb-6">Business</h1>
+          <p className="text-sm text-center sm:text-md font-medium font-serif">
             Create online training and assessments to ensure your staff are
             always up to date with the right skills. The powerful reporting
             allows you to track your staff participation and progress. FlexiQuiz
