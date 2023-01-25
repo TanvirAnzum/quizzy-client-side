@@ -37,7 +37,7 @@ const QuizItemModal = ({ setModal }) => {
     <>
       <div className="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-70 z-50"></div>
       <form
-        className="w-fit fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] m-auto flex flex-col p-5 gap-8 bg-base-300 z-50 rounded-xl"
+        className="w-full sm:w-fit fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] m-auto flex flex-col p-5 gap-8 bg-base-300 z-50 rounded-xl"
         onSubmit={submitHandler}
       >
         <h1 className="text-xl mx-auto font-bold uppercase">
@@ -77,7 +77,7 @@ const QuizItemModal = ({ setModal }) => {
           />
         ))}
 
-        <div className="btn-group mx-auto">
+        <div className=" btn-group flex-wrap items-center justify-center gap-2 sm:gap-0 mx-auto">
           <button
             className="btn"
             type="button"

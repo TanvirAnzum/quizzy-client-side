@@ -27,7 +27,6 @@ export const testsApi = apiSlice.injectEndpoints({
         body: data,
       }),
       async onQueryStarted(params, { queryFulfilled, dispatch }) {
-        console.log(params);
         const patchResult = dispatch(
           apiSlice.util.updateQueryData(
             "fetchTest",

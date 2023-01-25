@@ -85,7 +85,7 @@ const StartTest = () => {
             Quiz Test Details
           </h1>
           <p>Title: {title}</p>
-          <p>Duration: {quizDuration}</p>
+          <p>Duration: {quizDuration} minutes</p>
           <p>Total questions: {contents?.length}</p>
           <p>Total Points: {contents?.length * numberPerQuestion}</p>
           <p>Point per correct answer: {numberPerQuestion} </p>

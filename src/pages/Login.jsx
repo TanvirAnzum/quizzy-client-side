@@ -20,7 +20,6 @@ const Login = () => {
     try {
       const res = await signIn(email, password);
       setIsLoading((prev) => (prev = false));
-      console.log(res);
     } catch (error) {
       setIsLoading((prev) => (prev = false));
       console.log(error);

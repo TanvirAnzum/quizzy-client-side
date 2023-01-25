@@ -62,7 +62,7 @@ const TestLayout = () => {
   useEffect(() => {
     if (data?.isFinished) {
       toast("Test already finished!");
-      navigate(`/finished/${quizId}`);
+      navigate(`/test/finished/${quizId}`);
     }
   }, [data, navigate]);
 
@@ -93,7 +93,7 @@ const TestLayout = () => {
       <div className="w-full h-screen flex items-center justify-center">
         <div className="w-[80%] min-h-[80vh]  flex flex-col justify-between">
           {/* timer part */}
-          <div className="w-full h-[10vh] border p-5 flex items-center justify-between gap-5 rounded">
+          <div className="w-full min-h-[10vh] border p-5 flex flex-col sm:flex-row gap-2 items-center justify-between sm:gap-5 rounded">
             <h1 className="font-semibold text-2xl">{title}</h1>
             <div className="font-semibold text-xl w-fit flex flex-col gap-1">
               <p>Question Remaining: {contents?.length - answered}</p>

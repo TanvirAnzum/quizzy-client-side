@@ -32,7 +32,7 @@ const Options = ({
   };
 
   return (
-    <div className="w-full flex items-center gap-4 justify-between">
+    <div className="w-full flex flex-col sm:flex-row gap-1 items-center sm:gap-4 justify-between">
       <label htmlFor={"optionField" + index}>Option {index + 1}</label>
       <input
         id={"optionField" + index}

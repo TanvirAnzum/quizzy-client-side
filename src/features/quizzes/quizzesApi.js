@@ -71,7 +71,6 @@ export const quizzesApi = apiSlice.injectEndpoints({
         try {
           await queryFulfilled;
         } catch (error) {
-          console.log(error);
           patchResult.undo();
         }
       },
@@ -90,7 +89,6 @@ export const quizzesApi = apiSlice.injectEndpoints({
         try {
           await queryFulfilled;
         } catch (error) {
-          console.log(error);
           patchResult.undo();
         }
       },

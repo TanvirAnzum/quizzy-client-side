@@ -43,11 +43,31 @@ const Navbar = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             {auth ? (
-              <li>
-                <Link onClick={signOutHandler}>Log Out</Link>
-              </li>
+              <>
+                <li>
+                  <a
+                    href="https://shrtco.de/nPSqzg"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Demo quiz
+                  </a>
+                </li>
+                <li>
+                  <Link onClick={signOutHandler}>Log Out</Link>
+                </li>
+              </>
             ) : (
               <>
+                <li>
+                  <a
+                    href="https://shrtco.de/nPSqzg"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Demo quiz
+                  </a>
+                </li>
                 <li>
                   <Link to="/login">Login</Link>
                 </li>
@@ -69,11 +89,19 @@ const Navbar = () => {
 
       <div className="navbar-end gap-5 hidden lg:flex">
         {auth ? (
-          <button className="btn btn-error" onClick={signOutHandler}>
-            Sign Out
-          </button>
+          <>
+            <a href="https://shrtco.de/nPSqzg" target="_blank" rel="noreferrer">
+              <button className="btn btn-accent">Demo quiz</button>
+            </a>
+            <button className="btn btn-error" onClick={signOutHandler}>
+              Sign Out
+            </button>
+          </>
         ) : (
           <>
+            <a href="https://shrtco.de/nPSqzg" target="_blank" rel="noreferrer">
+              <button className="btn btn-accent">Demo quiz</button>
+            </a>
             <Link to="/register">
               <button className="btn btn-secondary w-[7em]">Sign Up</button>
             </Link>

@@ -39,7 +39,7 @@ const ConfigQuiz = ({ quiz }) => {
 
   return (
     <>
-      <div className="w-full flex p-5 items-start justify-between gap-4">
+      <div className="w-full flex flex-col sm:flex-row p-5 items-start justify-between gap-4">
         <form
           className="flex flex-col gap-4 p-5 justify-center items-center w-full sm:w-[30em] my-5 shadow shadow-neutral rounded"
           onSubmit={handleSubmit(setDetails)}

@@ -9,7 +9,6 @@ const Layout = () => {
   const currentTheme = useSelector((state) => state.theme);
   const { theme } = currentTheme;
   const { pathname } = useLocation() || {};
-  console.log(pathname);
 
   return (
     <>
